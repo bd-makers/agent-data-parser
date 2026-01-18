@@ -22,7 +22,12 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
-    "prepare": "npm run build"
+    "prepare": "npm run build",
+    "publish": "npm run build && npm publish -w @aijinet/bodoc-agent-parser-renderers && npm publish -w @aijinet/bodoc-agent-parser && npm publish -w @aijinet/bodoc-agent-parser-react-native && npm publish -w @aijinet/bodoc-agent-parser-web",
+    "publish:renderers": "npm run build:renderers && npm publish -w @aijinet/bodoc-agent-parser-renderers",
+    "publish:core": "npm run build:core && npm publish -w @aijinet/bodoc-agent-parser",
+    "publish:react-native": "npm run build:react-native && npm publish -w @aijinet/bodoc-agent-parser-react-native",
+    "publish:web": "npm run build:web && npm publish -w @aijinet/bodoc-agent-parser-web"
   },
   "devDependencies": {
     "@types/jest": "^29.5.12",
