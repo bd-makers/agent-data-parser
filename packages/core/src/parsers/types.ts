@@ -9,7 +9,7 @@ import type {
   IRendererContext,
   ParseInlineContentFn,
   IBlockRendererOptions,
-} from '@aijinet/bodoc-agent-parser-renderers';
+} from '@bdmakers/agent-data-parser-renderers';
 
 /**
  * Parse HTML options

@@ -12,10 +12,10 @@ module.exports = {
     ],
   },
   moduleNameMapper: {
-    '^@aijinet/bodoc-agent-parser$': '<rootDir>/packages/core/src',
-    '^@aijinet/bodoc-agent-parser-renderers$': '<rootDir>/packages/renderers/src',
-    '^@aijinet/bodoc-agent-parser-react-native$': '<rootDir>/packages/react-native/src',
-    '^@aijinet/bodoc-agent-parser-web$': '<rootDir>/packages/web/src',
+    '^@bdmakers/agent-data-parser$': '<rootDir>/packages/core/src',
+    '^@bdmakers/agent-data-parser-renderers$': '<rootDir>/packages/renderers/src',
+    '^@bdmakers/agent-data-parser-react-native$': '<rootDir>/packages/react-native/src',
+    '^@bdmakers/agent-data-parser-web$': '<rootDir>/packages/web/src',
   },
   collectCoverageFrom: [
     'packages/*/src/**/*.{ts,tsx}',

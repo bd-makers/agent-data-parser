@@ -5,7 +5,7 @@
 
 import type { ReactNode } from 'react';
 
-import type { IRendererContext, ParseInlineContentFn } from '@aijinet/bodoc-agent-parser-renderers';
+import type { IRendererContext, ParseInlineContentFn } from '@bdmakers/agent-data-parser-renderers';
 
 import { parseCdataContent } from '../utils/cdataUtils';
 import { parseImagePattern } from '../utils/imageUtils';

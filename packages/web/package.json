@@ -1,7 +1,7 @@
 {
-  "name": "@aijinet/bodoc-agent-parser-web",
+  "name": "@bdmakers/agent-data-parser-web",
   "version": "1.0.0",
-  "description": "Bodoc Agent Parser - Web (React DOM) implementation",
+  "description": "Agent Data Parser - Web (React DOM) implementation",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
@@ -21,8 +21,8 @@
     "type-check": "tsc --noEmit"
   },
   "dependencies": {
-    "@aijinet/bodoc-agent-parser": "^1.0.0",
-    "@aijinet/bodoc-agent-parser-renderers": "^1.0.0"
+    "@bdmakers/agent-data-parser": "^1.0.0",
+    "@bdmakers/agent-data-parser-renderers": "^1.0.0"
   },
   "peerDependencies": {
     "react": ">=17.0.0",

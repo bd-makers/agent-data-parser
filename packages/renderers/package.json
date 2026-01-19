@@ -1,7 +1,7 @@
 {
-  "name": "@aijinet/bodoc-agent-parser-renderers",
+  "name": "@bdmakers/agent-data-parser-renderers",
   "version": "1.0.0",
-  "description": "Bodoc Agent Parser - Renderer interfaces and types",
+  "description": "Agent Data Parser - Renderer interfaces and types",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",

@@ -1,7 +1,7 @@
 {
-  "name": "@aijinet/bodoc-agent-parser-react-native",
+  "name": "@bdmakers/agent-data-parser-react-native",
   "version": "1.0.0",
-  "description": "Bodoc Agent Parser - React Native implementation",
+  "description": "Agent Data Parser - React Native implementation",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
@@ -24,8 +24,8 @@
     "type-check": "tsc --noEmit"
   },
   "dependencies": {
-    "@aijinet/bodoc-agent-parser": "^1.0.0",
-    "@aijinet/bodoc-agent-parser-renderers": "^1.0.0"
+    "@bdmakers/agent-data-parser": "^1.0.0",
+    "@bdmakers/agent-data-parser-renderers": "^1.0.0"
   },
   "peerDependencies": {
     "react": ">=17.0.0",

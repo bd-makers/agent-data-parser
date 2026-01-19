@@ -1,12 +1,12 @@
 /**
- * @aijinet/bodoc-agent-parser-react-native
+ * @bdmakers/agent-data-parser-react-native
  *
- * React Native implementation for Bodoc Agent Parser.
+ * React Native implementation for Agent Data Parser.
  * Provides React Native components and context for message parsing and rendering.
  */
 
 // Re-export core utilities and types
-export * from '@aijinet/bodoc-agent-parser';
+export * from '@bdmakers/agent-data-parser';
 
 // Components
 export { BDView, BDText, BDImage, FilledButton, OutlineButton, Spacer } from './components';

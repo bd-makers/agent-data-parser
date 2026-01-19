@@ -5,7 +5,7 @@
 
 import { type CSSProperties, type ButtonHTMLAttributes, type ReactNode } from 'react';
 
-import type { IButtonSize } from '@aijinet/bodoc-agent-parser-renderers';
+import type { IButtonSize } from '@bdmakers/agent-data-parser-renderers';
 
 export interface WebButtonProps extends Omit<
   ButtonHTMLAttributes<HTMLButtonElement>,

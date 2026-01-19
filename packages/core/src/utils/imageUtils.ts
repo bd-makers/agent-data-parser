@@ -2,7 +2,7 @@
  * Image pattern parsing utility functions
  */
 
-import type { IImagePattern } from '@aijinet/bodoc-agent-parser-renderers';
+import type { IImagePattern } from '@bdmakers/agent-data-parser-renderers';
 
 /**
  * Returns default size based on image type

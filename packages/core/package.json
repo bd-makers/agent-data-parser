@@ -1,7 +1,7 @@
 {
-  "name": "@aijinet/bodoc-agent-parser",
+  "name": "@bdmakers/agent-data-parser",
   "version": "1.0.0",
-  "description": "Bodoc Agent Parser - Platform-agnostic message parser for React Native and Web",
+  "description": "Agent Data Parser - Platform-agnostic message parser for React Native and Web",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
@@ -28,7 +28,7 @@
     "test:watch": "jest --watch"
   },
   "dependencies": {
-    "@aijinet/bodoc-agent-parser-renderers": "^1.0.0"
+    "@bdmakers/agent-data-parser-renderers": "^1.0.0"
   },
   "peerDependencies": {
     "react": ">=17.0.0"

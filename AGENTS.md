@@ -1,6 +1,6 @@
-# Agent Guidelines: Bodoc Agent Parser
+# Agent Guidelines: Agent Data Parser
 
-This repository is a monorepo for the Bodoc Agent Parser, supporting both React Native and Web platforms.
+This repository is a monorepo for the Agent Data Parser, supporting both React Native and Web platforms.
 
 ## Project Structure
 
@@ -48,7 +48,7 @@ npx jest <path_to_test> # Run a specific test file
 - **Type-only Imports**: Use `import type` for importing types to avoid circular dependencies and reduce bundle size (`@typescript-eslint/consistent-type-imports`: error).
   ```typescript
   import type { ReactNode } from 'react';
-  import type { IRendererContext } from '@aijinet/bodoc-agent-parser-renderers';
+  import type { IRendererContext } from '@bdmakers/agent-data-parser-renderers';
   ```
 - **Unused Variables**: Prefix unused variables with `_` (e.g., `_context`) to satisfy `@typescript-eslint/no-unused-vars`.
 - **Explicit Returns**: Always define explicit return types for functions.
@@ -67,8 +67,8 @@ npx jest <path_to_test> # Run a specific test file
 ### 3. Imports & Exports
 
 - **Workspace Packages**: Use absolute imports for cross-package dependencies.
-  - `@aijinet/bodoc-agent-parser`
-  - `@aijinet/bodoc-agent-parser-renderers`
+  - `@bdmakers/agent-data-parser`
+  - `@bdmakers/agent-data-parser-renderers`
 - **Internal Imports**: Use relative paths for files within the same package.
 - **Index Files**: Use `index.ts` to export the public API of a directory or package.
 

@@ -1,8 +1,8 @@
 {
-  "name": "@aijinet/bodoc-agent-parser-monorepo",
+  "name": "@bdmakers/agent-data-parser-monorepo",
   "private": true,
   "version": "1.0.0",
-  "description": "Bodoc Agent Parser - React Native and Web message parser library",
+  "description": "Agent Data Parser - React Native and Web message parser library",
   "workspaces": [
     "packages/core",
     "packages/renderers",
@@ -11,10 +11,10 @@
   ],
   "scripts": {
     "build": "npm run build:renderers && npm run build:core && npm run build:react-native && npm run build:web",
-    "build:core": "npm run build -w @aijinet/bodoc-agent-parser",
-    "build:renderers": "npm run build -w @aijinet/bodoc-agent-parser-renderers",
-    "build:react-native": "npm run build -w @aijinet/bodoc-agent-parser-react-native",
-    "build:web": "npm run build -w @aijinet/bodoc-agent-parser-web",
+    "build:core": "npm run build -w @bdmakers/agent-data-parser",
+    "build:renderers": "npm run build -w @bdmakers/agent-data-parser-renderers",
+    "build:react-native": "npm run build -w @bdmakers/agent-data-parser-react-native",
+    "build:web": "npm run build -w @bdmakers/agent-data-parser-web",
     "clean": "rm -rf packages/*/dist",
     "lint": "eslint packages/*/src --ext .ts,.tsx",
     "lint:fix": "eslint packages/*/src --ext .ts,.tsx --fix",
@@ -23,11 +23,11 @@
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
     "prepare": "npm run build",
-    "publish": "npm run build && npm publish -w @aijinet/bodoc-agent-parser-renderers && npm publish -w @aijinet/bodoc-agent-parser && npm publish -w @aijinet/bodoc-agent-parser-react-native && npm publish -w @aijinet/bodoc-agent-parser-web",
-    "publish:renderers": "npm run build:renderers && npm publish -w @aijinet/bodoc-agent-parser-renderers",
-    "publish:core": "npm run build:core && npm publish -w @aijinet/bodoc-agent-parser",
-    "publish:react-native": "npm run build:react-native && npm publish -w @aijinet/bodoc-agent-parser-react-native",
-    "publish:web": "npm run build:web && npm publish -w @aijinet/bodoc-agent-parser-web"
+    "publish": "npm run build && npm publish -w @bdmakers/agent-data-parser-renderers && npm publish -w @bdmakers/agent-data-parser && npm publish -w @bdmakers/agent-data-parser-react-native && npm publish -w @bdmakers/agent-data-parser-web",
+    "publish:renderers": "npm run build:renderers && npm publish -w @bdmakers/agent-data-parser-renderers",
+    "publish:core": "npm run build:core && npm publish -w @bdmakers/agent-data-parser",
+    "publish:react-native": "npm run build:react-native && npm publish -w @bdmakers/agent-data-parser-react-native",
+    "publish:web": "npm run build:web && npm publish -w @bdmakers/agent-data-parser-web"
   },
   "devDependencies": {
     "@types/jest": "^29.5.12",

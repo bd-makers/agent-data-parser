@@ -1,7 +1,7 @@
 /**
- * @aijinet/bodoc-agent-parser-renderers
+ * @bdmakers/agent-data-parser-renderers
  *
- * Platform-agnostic interfaces and types for the Bodoc Agent Parser.
+ * Platform-agnostic interfaces and types for the Agent Data Parser.
  * This package defines the contracts that platform-specific implementations must follow.
  */
 
