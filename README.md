@@ -188,4 +188,4 @@ Web (React DOM) 구현체를 제공합니다.
 
 ## 라이선스
 
-UNLICENSED - Private package
+MIT License - [LICENSE](./LICENSE) 파일을 참고하세요.
