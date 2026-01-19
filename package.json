@@ -1,7 +1,7 @@
 {
   "name": "@bdmakers/agent-data-parser-monorepo",
   "private": true,
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Agent Data Parser - React Native and Web message parser library",
   "workspaces": [
     "packages/core",
@@ -54,5 +54,5 @@
     "url": "git+https://github.com/aijinet/bodoc-agent-parser.git"
   },
   "author": "Aijinet",
-  "license": "UNLICENSED"
+  "license": "MIT"
 }
