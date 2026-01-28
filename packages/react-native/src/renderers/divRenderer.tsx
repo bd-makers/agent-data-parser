@@ -1,7 +1,7 @@
 import React, { type ReactNode } from 'react';
 
-import type { IDivRendererOptions, IRendererContext } from '@aijinet/bodoc-agent-parser-renderers';
-import { parseAttributes, findBlockTags } from '@aijinet/bodoc-agent-parser';
+import type { IDivRendererOptions, IRendererContext } from '@bdmakers/agent-data-parser-renderers';
+import { parseAttributes, findBlockTags } from '@bdmakers/agent-data-parser';
 
 const processInlineContentForDiv = (
   content: ReactNode,

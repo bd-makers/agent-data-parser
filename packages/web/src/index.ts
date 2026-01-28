@@ -1,12 +1,12 @@
 /**
- * @aijinet/bodoc-agent-parser-web
+ * @bdmakers/agent-data-parser-web
  *
  * Web (React DOM) implementation for Bodoc Agent Parser.
  * Provides React DOM components and context for message parsing and rendering.
  */
 
 // Re-export core utilities and types
-export * from '@aijinet/bodoc-agent-parser';
+export * from '@bdmakers/agent-data-parser';
 
 // Components
 export { BDView, BDText, BDImage, FilledButton, OutlineButton, Spacer } from './components';

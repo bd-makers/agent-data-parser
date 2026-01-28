@@ -1,4 +1,4 @@
-import React, { useMemo, memo, type ReactNode } from 'react';
+import { useMemo, memo, type ReactNode } from 'react';
 import {
   View,
   type ViewProps,

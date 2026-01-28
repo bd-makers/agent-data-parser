@@ -4,8 +4,8 @@ import type {
   IRendererContext,
   IParseInlineTagsOptions,
   IParseInlineTagsResult,
-} from '@aijinet/bodoc-agent-parser-renderers';
-import { parseInlineMarkdownToSegments, parseAttributes } from '@aijinet/bodoc-agent-parser';
+} from '@bdmakers/agent-data-parser-renderers';
+import { parseInlineMarkdownToSegments, parseAttributes } from '@bdmakers/agent-data-parser';
 
 export const renderInlineMarkdown = (text: string, context: IRendererContext): ReactNode => {
   const segments = parseInlineMarkdownToSegments(text);

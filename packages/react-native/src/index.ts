@@ -1,4 +1,4 @@
-export * from '@aijinet/bodoc-agent-parser';
+export * from '@bdmakers/agent-data-parser';
 
 export { BDView, BDText, BDImage, FilledButton, OutlineButton, Spacer } from './components';
 export type {

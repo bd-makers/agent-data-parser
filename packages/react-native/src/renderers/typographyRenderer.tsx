@@ -6,8 +6,8 @@ import type {
   ITypographyRendererOptions,
   TypographyTagName,
   ITypographyStyleDef,
-} from '@aijinet/bodoc-agent-parser-renderers';
-import { parseAttributes, cleanColorAttribute } from '@aijinet/bodoc-agent-parser';
+} from '@bdmakers/agent-data-parser-renderers';
+import { parseAttributes, cleanColorAttribute } from '@bdmakers/agent-data-parser';
 
 const getTypographyStyle = (
   tagName: TypographyTagName,

@@ -5,7 +5,7 @@ import type {
   IComponentProvider,
   IParserStyles,
   ITheme,
-} from '@aijinet/bodoc-agent-parser-renderers';
+} from '@bdmakers/agent-data-parser-renderers';
 
 import { BDView, BDText, BDImage, FilledButton, OutlineButton, Spacer } from '../components';
 

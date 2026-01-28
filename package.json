@@ -1,7 +1,7 @@
 {
-  "name": "@aijinet/bodoc-agent-parser-monorepo",
+  "name": "@bdmakers/agent-data-parser-monorepo",
   "private": true,
-  "version": "1.0.0",
+  "version": "0.1.1",
   "description": "Bodoc Agent Parser - React Native and Web message parser library",
   "workspaces": [
     "packages/core",
@@ -11,10 +11,10 @@
   ],
   "scripts": {
     "build": "npm run build:renderers && npm run build:core && npm run build:react-native && npm run build:web",
-    "build:core": "npm run build -w @aijinet/bodoc-agent-parser",
-    "build:renderers": "npm run build -w @aijinet/bodoc-agent-parser-renderers",
-    "build:react-native": "npm run build -w @aijinet/bodoc-agent-parser-react-native",
-    "build:web": "npm run build -w @aijinet/bodoc-agent-parser-web",
+    "build:core": "npm run build -w @bdmakers/agent-data-parser",
+    "build:renderers": "npm run build -w @bdmakers/agent-data-parser-renderers",
+    "build:react-native": "npm run build -w @bdmakers/agent-data-parser-react-native",
+    "build:web": "npm run build -w @bdmakers/agent-data-parser-web",
     "clean": "rm -rf packages/*/dist",
     "lint": "eslint packages/*/src --ext .ts,.tsx",
     "lint:fix": "eslint packages/*/src --ext .ts,.tsx --fix",
@@ -46,7 +46,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/aijinet/bodoc-agent-parser.git"
+    "url": "git+https://github.com/bd-makers/agent-data-parser.git"
   },
   "author": "Aijinet",
   "license": "UNLICENSED"

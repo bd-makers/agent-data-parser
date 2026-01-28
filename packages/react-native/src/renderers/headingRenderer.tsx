@@ -1,11 +1,11 @@
-import React, { type ReactNode } from 'react';
+import { type ReactNode } from 'react';
 
 import type {
   IHeadingRendererOptions,
   HeadingTagName,
   ITypographyStyleDef,
   IRendererContext,
-} from '@aijinet/bodoc-agent-parser-renderers';
+} from '@bdmakers/agent-data-parser-renderers';
 
 const getHeadingTypography = (
   tagName: string,

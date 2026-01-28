@@ -4,8 +4,8 @@ import type {
   IRendererContext,
   ParseFunction,
   IMessageParser,
-} from '@aijinet/bodoc-agent-parser-renderers';
-import { detectContentType } from '@aijinet/bodoc-agent-parser';
+} from '@bdmakers/agent-data-parser-renderers';
+import { detectContentType } from '@bdmakers/agent-data-parser';
 
 import { parseHtml } from './parseHtml';
 import { createParseInlineContent } from './parseInlineContent';

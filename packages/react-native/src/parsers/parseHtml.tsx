@@ -1,6 +1,6 @@
 import { type ReactNode } from 'react';
 
-import type { IRendererContext, ParseInlineContentFn } from '@aijinet/bodoc-agent-parser-renderers';
+import type { IRendererContext, ParseInlineContentFn } from '@bdmakers/agent-data-parser-renderers';
 import {
   parseAttributes,
   parseCdataContent,
@@ -10,7 +10,7 @@ import {
   findCdataTags,
   collectAndSortPositions,
   type TagPosition,
-} from '@aijinet/bodoc-agent-parser';
+} from '@bdmakers/agent-data-parser';
 
 import { renderBlockTag } from '../renderers/blockRenderers';
 

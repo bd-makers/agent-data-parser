@@ -9,7 +9,7 @@ export default defineConfig({
   dts: true,
   clean: true,
   sourcemap: true,
-  external: ['react', '@aijinet/bodoc-agent-parser-renderers'],
+  external: ['react', '@bdmakers/agent-data-parser-renderers'],
   treeshake: true,
   splitting: false,
 });

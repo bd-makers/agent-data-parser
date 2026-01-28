@@ -1,7 +1,7 @@
-import React, { type ReactNode } from 'react';
+import { type ReactNode } from 'react';
 
-import type { IButtonRendererOptions, ButtonTagName } from '@aijinet/bodoc-agent-parser-renderers';
-import { parseImagePattern, removeImagePatterns, buildImageUrl } from '@aijinet/bodoc-agent-parser';
+import type { IButtonRendererOptions, ButtonTagName } from '@bdmakers/agent-data-parser-renderers';
+import { parseImagePattern, removeImagePatterns, buildImageUrl } from '@bdmakers/agent-data-parser';
 
 export const isButtonTag = (tagName: string): tagName is ButtonTagName => {
   const buttonTags: ButtonTagName[] = ['button', 'button1', 'button2'];

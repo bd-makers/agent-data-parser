@@ -1,7 +1,7 @@
 import React, { type ReactNode } from 'react';
 import { StyleSheet } from 'react-native';
 
-import type { IRendererContext } from '@aijinet/bodoc-agent-parser-renderers';
+import type { IRendererContext } from '@bdmakers/agent-data-parser-renderers';
 
 import { renderInlineMarkdown } from '../renderers/inlineRenderers';
 

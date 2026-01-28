@@ -1,6 +1,6 @@
-import React, { type ReactNode } from 'react';
+import { type ReactNode } from 'react';
 
-import type { IRendererContext } from '@aijinet/bodoc-agent-parser-renderers';
+import type { IRendererContext } from '@bdmakers/agent-data-parser-renderers';
 import {
   parseAttributes,
   parseCdataContent,
@@ -8,7 +8,7 @@ import {
   replacePlaceholders,
   getImageDefaultSize,
   buildImageUrl,
-} from '@aijinet/bodoc-agent-parser';
+} from '@bdmakers/agent-data-parser';
 
 import { parseInlineTags } from '../renderers/inlineRenderers';
 
@@ -16,7 +16,7 @@ export const createParseInlineContent =
   (context: IRendererContext) =>
   (
     text: string,
-    onButtonPress?: (title: string, cdata?: object) => void,
+    _onButtonPress?: (title: string, cdata?: object) => void,
     placeholders?: Record<string, string>,
     onLinkPress?: (href: string, cdata?: object) => void,
   ): ReactNode => {

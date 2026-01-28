@@ -1,7 +1,7 @@
 {
-  "name": "@aijinet/bodoc-agent-parser-web",
-  "version": "1.0.0",
-  "description": "Bodoc Agent Parser - Web (React DOM) implementation",
+  "name": "@bdmakers/agent-data-parser-web",
+  "version": "0.1.1",
+  "description": "Agent Data Parser - Web (React DOM) implementation",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
@@ -21,8 +21,8 @@
     "type-check": "tsc --noEmit"
   },
   "dependencies": {
-    "@aijinet/bodoc-agent-parser": "^1.0.0",
-    "@aijinet/bodoc-agent-parser-renderers": "^1.0.0"
+    "@bdmakers/agent-data-parser": "^0.1.1",
+    "@bdmakers/agent-data-parser-renderers": "^0.1.1"
   },
   "peerDependencies": {
     "react": ">=17.0.0",
@@ -37,13 +37,13 @@
     "typescript": "^5.3.3"
   },
   "publishConfig": {
-    "access": "restricted"
+    "access": "public"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/aijinet/bodoc-agent-parser.git",
+    "url": "git+https://github.com/bd-makers/agent-data-parser.git",
     "directory": "packages/web"
   },
   "author": "Aijinet",
-  "license": "UNLICENSED"
+  "license": "MIT"
 }

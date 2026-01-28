@@ -14,7 +14,7 @@ import type {
   ITypographyTokens,
   IButtonSizeTokens,
   IButtonToneTokens,
-} from '@aijinet/bodoc-agent-parser-renderers';
+} from '@bdmakers/agent-data-parser-renderers';
 
 /**
  * Color System
@@ -411,7 +411,7 @@ export const typography: ITypographyTokens = {
     lineHeight: font.line_height_30,
     fontWeight: font.weight_600,
     letterSpacing: font.letter_spacing_m05,
-    textDecorationLine: font.text_decoration_underline,
+    textDecorationLine: font.text_decoration_underline as 'underline',
   },
   h5_medium: {
     fontSize: font.size_20,
@@ -437,7 +437,7 @@ export const typography: ITypographyTokens = {
     lineHeight: font.line_height_28,
     fontWeight: font.weight_600,
     letterSpacing: font.letter_spacing_m05,
-    textDecorationLine: font.text_decoration_underline,
+    textDecorationLine: font.text_decoration_underline as 'underline',
   },
   body1: {
     fontSize: font.size_18,
@@ -457,7 +457,7 @@ export const typography: ITypographyTokens = {
     lineHeight: font.line_height_24,
     fontWeight: font.weight_600,
     letterSpacing: font.letter_spacing_m05,
-    textDecorationLine: font.text_decoration_underline,
+    textDecorationLine: font.text_decoration_underline as 'underline',
   },
   body2_medium: {
     fontSize: font.size_16,
@@ -489,7 +489,7 @@ export const typography: ITypographyTokens = {
     lineHeight: font.line_height_22,
     fontWeight: font.weight_600,
     letterSpacing: font.letter_spacing_m05,
-    textDecorationLine: font.text_decoration_underline,
+    textDecorationLine: font.text_decoration_underline as 'underline',
   },
   body3_medium: {
     fontSize: font.size_14,
@@ -502,7 +502,7 @@ export const typography: ITypographyTokens = {
     lineHeight: font.line_height_22,
     fontWeight: font.weight_400,
     letterSpacing: font.letter_spacing_m05,
-    textDecorationLine: font.text_decoration_underline,
+    textDecorationLine: font.text_decoration_underline as 'underline',
   },
   body3_reading: {
     fontSize: font.size_14,
@@ -533,7 +533,7 @@ export const typography: ITypographyTokens = {
     lineHeight: font.line_height_18,
     fontWeight: font.weight_400,
     letterSpacing: font.letter_spacing_m05,
-    textDecorationLine: font.text_decoration_underline,
+    textDecorationLine: font.text_decoration_underline as 'underline',
   },
   body4_normal: {
     fontSize: font.size_13,
@@ -564,7 +564,7 @@ export const typography: ITypographyTokens = {
     lineHeight: font.line_height_18,
     fontWeight: font.weight_400,
     letterSpacing: font.letter_spacing_m05,
-    textDecorationLine: font.text_decoration_underline,
+    textDecorationLine: font.text_decoration_underline as 'underline',
   },
   body5_normal: {
     fontSize: font.size_12,
@@ -595,7 +595,7 @@ export const typography: ITypographyTokens = {
     lineHeight: font.line_height_18,
     fontWeight: font.weight_400,
     letterSpacing: font.letter_spacing_m05,
-    textDecorationLine: font.text_decoration_underline,
+    textDecorationLine: font.text_decoration_underline as 'underline',
   },
   caption2_medium: {
     fontSize: font.size_8,

@@ -1,6 +1,6 @@
 import { type ReactNode } from 'react';
 
-import type { IBlockRendererOptions } from '@aijinet/bodoc-agent-parser-renderers';
+import type { IBlockRendererOptions } from '@bdmakers/agent-data-parser-renderers';
 
 import { renderButtonTag, isButtonTag } from './buttonRenderer';
 import { renderDivTag } from './divRenderer';
