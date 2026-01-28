@@ -48,7 +48,6 @@ export const parseImagePattern = (text: string): IImagePattern | null => {
  * @param baseUrl - Image base URL (dependency injection)
  * @param id - Image ID
  * @param seq - Image sequence
- * Example: https://test-api.bodoc.co.kr/image/ai/1/image?seq=1
  */
 export const buildImageUrl = (baseUrl: string, id: string, seq: string): string =>
   `${baseUrl}ai/${id}/image?seq=${seq}`;
