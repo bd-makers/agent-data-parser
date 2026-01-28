@@ -1,7 +1,7 @@
 {
-  "name": "@bdmakers/agent-data-parser-renderers",
-  "version": "0.1.0",
-  "description": "Agent Data Parser - Renderer interfaces and types",
+  "name": "@aijinet/bodoc-agent-parser-renderers",
+  "version": "1.0.0",
+  "description": "Bodoc Agent Parser - Renderer interfaces and types",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
@@ -29,9 +29,13 @@
     "typescript": "^5.3.3"
   },
   "publishConfig": {
-    "access": "public"
+    "access": "restricted"
   },
-  "repository": "https://github.com/aijinet/bodoc-agent-parser.git",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aijinet/bodoc-agent-parser.git",
+    "directory": "packages/renderers"
+  },
   "author": "Aijinet",
-  "license": "MIT"
+  "license": "UNLICENSED"
 }

@@ -9,8 +9,8 @@ export default defineConfig({
   external: [
     'react',
     'react-dom',
-    '@bdmakers/agent-data-parser',
-    '@bdmakers/agent-data-parser-renderers',
+    '@aijinet/bodoc-agent-parser',
+    '@aijinet/bodoc-agent-parser-renderers',
   ],
   treeshake: true,
 });

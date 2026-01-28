@@ -1,23 +1,25 @@
-/**
- * React Native Context Factory
- * Creates a renderer context with React Native components
- */
-
 import { Linking } from 'react-native';
 
 import type {
   IRendererContext,
-  IRendererContextConfig,
   IComponentProvider,
   IParserStyles,
-} from '@bdmakers/agent-data-parser-renderers';
+  ITheme,
+} from '@aijinet/bodoc-agent-parser-renderers';
 
 import { BDView, BDText, BDImage, FilledButton, OutlineButton, Spacer } from '../components';
-import { defaultTheme } from '../theme';
 
-/**
- * Default parser styles
- */
+export interface IReactNativeContextConfig {
+  imageBaseUrl: string;
+  theme?: ITheme;
+  openUrl?: (url: string) => void;
+  styles?: Partial<IParserStyles>;
+  components?: Partial<IComponentProvider>;
+  messageType?: 'jsx' | 'mid' | 'bt' | string;
+  messageId?: string;
+  defaultImageSource?: { uri?: string };
+}
+
 const defaultParserStyles: IParserStyles = {
   hr: {
     height: 1,
@@ -32,11 +34,6 @@ const defaultParserStyles: IParserStyles = {
   },
 };
 
-/**
- * Default component provider for React Native
- * Type assertions are used because RN components have platform-specific types
- * that are subtypes of the generic interface
- */
 const defaultComponentProvider: IComponentProvider = {
   View: BDView as unknown as IComponentProvider['View'],
   Text: BDText as unknown as IComponentProvider['Text'],
@@ -46,23 +43,17 @@ const defaultComponentProvider: IComponentProvider = {
   Spacer: Spacer as unknown as IComponentProvider['Spacer'],
 };
 
-/**
- * Default URL opener using React Native Linking
- */
 const defaultOpenUrl = (url: string): void => {
   Linking.openURL(url).catch(() => {
-    // Fail silently
+    // Silently ignore URL opening failures
   });
 };
 
-/**
- * Creates a React Native renderer context
- */
-export const createReactNativeContext = (config: IRendererContextConfig): IRendererContext => {
+export const createReactNativeContext = (config: IReactNativeContextConfig): IRendererContext => {
   const {
     imageBaseUrl,
-    openUrl = defaultOpenUrl,
     theme,
+    openUrl = defaultOpenUrl,
     styles,
     components,
     messageType,
@@ -77,7 +68,7 @@ export const createReactNativeContext = (config: IRendererContextConfig): IRende
       ...defaultParserStyles,
       ...styles,
     },
-    theme: theme ? { ...defaultTheme, ...theme } : defaultTheme,
+    theme,
     components: {
       ...defaultComponentProvider,
       ...components,
@@ -86,12 +77,4 @@ export const createReactNativeContext = (config: IRendererContextConfig): IRende
     messageId,
     defaultImageSource,
   };
-};
-
-/**
- * Creates a default React Native context
- * Requires imageBaseUrl to be provided
- */
-export const createDefaultReactNativeContext = (imageBaseUrl: string): IRendererContext => {
-  return createReactNativeContext({ imageBaseUrl });
 };

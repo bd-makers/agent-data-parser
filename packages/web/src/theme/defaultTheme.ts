@@ -14,7 +14,7 @@ import type {
   ITypographyTokens,
   IButtonSizeTokens,
   IButtonToneTokens,
-} from '@bdmakers/agent-data-parser-renderers';
+} from '@aijinet/bodoc-agent-parser-renderers';
 
 /**
  * Color System

@@ -1,14 +1,5 @@
-/**
- * @bdmakers/agent-data-parser-react-native
- *
- * React Native implementation for Agent Data Parser.
- * Provides React Native components and context for message parsing and rendering.
- */
+export * from '@aijinet/bodoc-agent-parser';
 
-// Re-export core utilities and types
-export * from '@bdmakers/agent-data-parser';
-
-// Components
 export { BDView, BDText, BDImage, FilledButton, OutlineButton, Spacer } from './components';
 export type {
   BDViewProps,
@@ -18,18 +9,26 @@ export type {
   SpacerProps,
 } from './components';
 
-// Theme
-export {
-  defaultTheme,
-  colorSystem,
-  semanticColors,
-  spacing,
-  shape,
-  font,
-  typography,
-  buttonSizes,
-  buttonTones,
-} from './theme';
+export { createReactNativeContext } from './context';
+export type { IReactNativeContextConfig } from './context';
 
-// Context
-export { createReactNativeContext, createDefaultReactNativeContext } from './context';
+export {
+  renderInlineMarkdown,
+  parseInlineTags,
+  renderTypographyTag,
+  isTypographyTag,
+  renderHeadingTag,
+  isHeadingTag,
+  renderButtonTag,
+  isButtonTag,
+  renderDivTag,
+  renderBlockTag,
+} from './renderers';
+
+export {
+  createBodocParser,
+  BodocParserAdapter,
+  createParseInlineContent,
+  parseHtml,
+  createParseMarkdown,
+} from './parsers';

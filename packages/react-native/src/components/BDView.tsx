@@ -1,9 +1,4 @@
-/**
- * BDView Component
- * React Native View component with design token support
- */
-
-import { useMemo, memo, type ReactNode } from 'react';
+import React, { useMemo, memo, type ReactNode } from 'react';
 import {
   View,
   type ViewProps,

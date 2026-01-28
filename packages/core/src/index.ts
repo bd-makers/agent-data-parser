@@ -1,11 +1,11 @@
 /**
- * @bdmakers/agent-data-parser
+ * @aijinet/bodoc-agent-parser
  *
  * Platform-agnostic message parser core library for React Native and Web.
  * This package provides the parsing logic and utilities.
  * Platform-specific rendering is handled by companion packages:
- * - @bdmakers/agent-data-parser-react-native
- * - @bdmakers/agent-data-parser-web
+ * - @aijinet/bodoc-agent-parser-react-native
+ * - @aijinet/bodoc-agent-parser-web
  */
 
 // Re-export types from renderers package
@@ -61,7 +61,7 @@ export type {
   TypographyTagName,
   HeadingTagName,
   ButtonTagName,
-} from '@bdmakers/agent-data-parser-renderers';
+} from '@aijinet/bodoc-agent-parser-renderers';
 
 // Utilities
 export {

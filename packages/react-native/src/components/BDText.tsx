@@ -1,9 +1,4 @@
-/**
- * BDText Component
- * React Native Text component with typography support
- */
-
-import type { ReactNode } from 'react';
+import React, { type ReactNode } from 'react';
 import {
   Text,
   type TextProps,

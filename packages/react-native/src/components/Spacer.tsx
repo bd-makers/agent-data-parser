@@ -1,8 +1,4 @@
-/**
- * Spacer Component
- * React Native spacing component
- */
-
+import React from 'react';
 import { View, type ViewStyle } from 'react-native';
 
 export interface SpacerProps {

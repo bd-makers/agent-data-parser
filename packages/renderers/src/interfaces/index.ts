@@ -26,6 +26,7 @@ export type {
   // Button
   IButtonProps,
   IButtonSize,
+  IButtonTone,
   // Spacer
   ISpacerProps,
   // ShimmerText

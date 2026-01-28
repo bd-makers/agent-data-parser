@@ -136,13 +136,14 @@ export interface ITextProps {
   testID?: string;
 
   // Typography
-  typography?: ITypographyStyle;
+  typography?: ITypographyStyle | null;
   color?: ColorValue;
   textAlign?: TextAlignType;
   flex?: number;
 
   // Event handlers
   onPress?: () => void;
+  suppressHighlighting?: boolean;
 
   // Accessibility
   accessibilityLabel?: string;
@@ -221,7 +222,7 @@ export interface IButtonProps {
   size?: IButtonSize;
 
   // Tone/variant
-  tone?: string;
+  tone?: IButtonTone;
 
   // Custom colors
   textColor?: string;
@@ -230,6 +231,20 @@ export interface IButtonProps {
   // Icon support
   leftIcon?: ReactNode;
   rightIcon?: ReactNode;
+
+  // Text style override
+  textStyle?: ITypographyStyle;
+}
+
+export interface IButtonTone {
+  active: {
+    backgroundColor: string;
+    textColor: string;
+  };
+  disabled: {
+    backgroundColor: string;
+    textColor: string;
+  };
 }
 
 /**
@@ -266,6 +281,8 @@ export interface ISpacerProps {
  */
 export interface IShimmerTextProps {
   children?: ReactNode;
+  enabled?: boolean;
+  duration?: number;
   messageId?: string;
   style?: StyleProp<TextStyleProps | CSSProperties>;
   testID?: string;

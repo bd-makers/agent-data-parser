@@ -1,7 +1,7 @@
 /**
- * @bdmakers/agent-data-parser-renderers
+ * @aijinet/bodoc-agent-parser-renderers
  *
- * Platform-agnostic interfaces and types for the Agent Data Parser.
+ * Platform-agnostic interfaces and types for the Bodoc Agent Parser.
  * This package defines the contracts that platform-specific implementations must follow.
  */
 
@@ -30,6 +30,7 @@ export type {
   // Button
   IButtonProps,
   IButtonSize,
+  IButtonTone,
   // Spacer
   ISpacerProps,
   // ShimmerText
@@ -84,4 +85,16 @@ export type {
   TypographyTagName,
   HeadingTagName,
   ButtonTagName,
+  // Block Renderer
+  BlockRendererFn,
+  // Inline Parser
+  IParseInlineTagsOptions,
+  IParseInlineTagsResult,
+  ParseInlineTagsFn,
+  RenderInlineMarkdownFn,
+  // Renderer Options
+  IDivRendererOptions,
+  ITypographyRendererOptions,
+  IHeadingRendererOptions,
+  IButtonRendererOptions,
 } from './context';

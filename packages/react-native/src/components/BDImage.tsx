@@ -1,8 +1,4 @@
-/**
- * BDImage Component
- * React Native Image component with fallback support
- */
-
+import React from 'react';
 import {
   Image,
   type ImageStyle,

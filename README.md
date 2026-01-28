@@ -1,31 +1,31 @@
-# Agent Data Parser
+# Bodoc Agent Parser
 
 React Native + Web 지원하는 메시지 파서 라이브러리
 
 ## 패키지 구조
 
 ```
-@bdmakers/agent-data-parser/
+@aijinet/bodoc-agent-parser/
 ├── packages/
-│   ├── core/                    # @bdmakers/agent-data-parser
+│   ├── core/                    # @aijinet/bodoc-agent-parser
 │   │   └── src/
 │   │       ├── parsers/         # 파싱 로직
 │   │       ├── utils/           # 유틸리티 함수
 │   │       └── types/           # 타입 정의
 │   │
-│   ├── renderers/               # @bdmakers/agent-data-parser-renderers
+│   ├── renderers/               # @aijinet/bodoc-agent-parser-renderers
 │   │   └── src/
 │   │       ├── interfaces/      # 컴포넌트 인터페이스
 │   │       ├── context/         # 렌더러 컨텍스트 타입
 │   │       └── theme/           # 테마 토큰 인터페이스
 │   │
-│   ├── react-native/            # @bdmakers/agent-data-parser-react-native
+│   ├── react-native/            # @aijinet/bodoc-agent-parser-react-native
 │   │   └── src/
 │   │       ├── components/      # RN 컴포넌트
 │   │       ├── theme/           # 기본 RN 테마
 │   │       └── context/         # RN 컨텍스트 팩토리
 │   │
-│   └── web/                     # @bdmakers/agent-data-parser-web
+│   └── web/                     # @aijinet/bodoc-agent-parser-web
 │       └── src/
 │           ├── components/      # 웹 컴포넌트
 │           ├── theme/           # 기본 웹 테마
@@ -37,13 +37,13 @@ React Native + Web 지원하는 메시지 파서 라이브러리
 ### React Native 프로젝트
 
 ```bash
-npm install @bdmakers/agent-data-parser-react-native
+npm install @aijinet/bodoc-agent-parser-react-native
 ```
 
 ### Web 프로젝트
 
 ```bash
-npm install @bdmakers/agent-data-parser-web
+npm install @aijinet/bodoc-agent-parser-web
 ```
 
 ## 사용법
@@ -56,7 +56,7 @@ import {
   detectContentType,
   parseImagePattern,
   buildImageUrl,
-} from '@bdmakers/agent-data-parser-react-native';
+} from '@aijinet/bodoc-agent-parser-react-native';
 
 // 컨텍스트 생성
 const context = createReactNativeContext({
@@ -83,7 +83,7 @@ import {
   detectContentType,
   BDView,
   BDText,
-} from '@bdmakers/agent-data-parser-web';
+} from '@aijinet/bodoc-agent-parser-web';
 
 // 컨텍스트 생성
 const context = createWebContext({
@@ -142,7 +142,7 @@ npm run test
 
 ## 패키지 설명
 
-### @bdmakers/agent-data-parser
+### @aijinet/bodoc-agent-parser
 
 플랫폼 무관 파싱 로직과 유틸리티 함수를 제공합니다.
 
@@ -154,7 +154,7 @@ npm run test
 - CDATA 파싱
 - 마크다운 파싱
 
-### @bdmakers/agent-data-parser-renderers
+### @aijinet/bodoc-agent-parser-renderers
 
 플랫폼 무관 인터페이스와 타입 정의를 제공합니다.
 
@@ -164,7 +164,7 @@ npm run test
 - `IRendererContext` - 렌더러 컨텍스트
 - `IComponentProvider` - 컴포넌트 프로바이더
 
-### @bdmakers/agent-data-parser-react-native
+### @aijinet/bodoc-agent-parser-react-native
 
 React Native 구현체를 제공합니다.
 
@@ -175,7 +175,7 @@ React Native 구현체를 제공합니다.
 - `FilledButton`, `OutlineButton` - 버튼 컴포넌트
 - `Spacer` - 스페이서 컴포넌트
 
-### @bdmakers/agent-data-parser-web
+### @aijinet/bodoc-agent-parser-web
 
 Web (React DOM) 구현체를 제공합니다.
 
@@ -188,4 +188,4 @@ Web (React DOM) 구현체를 제공합니다.
 
 ## 라이선스
 
-MIT License - [LICENSE](./LICENSE) 파일을 참고하세요.
+UNLICENSED - Private package

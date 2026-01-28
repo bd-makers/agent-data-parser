@@ -1,8 +1,4 @@
-/**
- * Button Components
- * React Native button implementations
- */
-
+import React, { type ReactNode } from 'react';
 import {
   TouchableOpacity,
   Text,
@@ -12,9 +8,7 @@ import {
   StyleSheet,
 } from 'react-native';
 
-import type { ReactNode } from 'react';
-
-import type { IButtonSize } from '@bdmakers/agent-data-parser-renderers';
+import type { IButtonSize } from '@aijinet/bodoc-agent-parser-renderers';
 
 export interface RNButtonProps {
   title: string;

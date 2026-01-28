@@ -181,3 +181,93 @@ export type HeadingTagName = 'h1' | 'h2' | 'h3';
  * Button tag names
  */
 export type ButtonTagName = 'button' | 'button1' | 'button2';
+
+/**
+ * Block renderer function type
+ * Used by platform-specific renderers to render block tags
+ */
+export type BlockRendererFn = (
+  tagName: string,
+  innerContent: string,
+  key: number,
+  options: IBlockRendererOptions,
+  attributes?: string,
+  cdata?: object | null,
+) => ReactNode;
+
+/**
+ * Inline tags parser options
+ */
+export interface IParseInlineTagsOptions {
+  context: IRendererContext;
+  keyStart: number;
+  depth?: number;
+  onLinkPress?: (href: string, cdata?: object) => void;
+  linkCdataMap?: Map<string, object | null>;
+  originalText?: string;
+}
+
+/**
+ * Inline tags parser result
+ */
+export interface IParseInlineTagsResult {
+  parts: ReactNode[];
+  nextKey: number;
+}
+
+/**
+ * Inline tags parser function type
+ */
+export type ParseInlineTagsFn = (
+  text: string,
+  options: IParseInlineTagsOptions,
+) => IParseInlineTagsResult;
+
+/**
+ * Render inline markdown function type
+ */
+export type RenderInlineMarkdownFn = (text: string, keyStart?: number) => ReactNode;
+
+/**
+ * Div renderer options (extended for recursive rendering)
+ */
+export interface IDivRendererOptions {
+  context: IRendererContext;
+  parseInlineContent: ParseInlineContentFn;
+  parseImagePattern: ParseImagePatternFn;
+  renderBlockTagFn: BlockRendererFn;
+  onButtonPress?: (title: string, cdata?: object) => void;
+  onLinkPress?: (href: string, cdata?: object) => void;
+  placeholders?: Record<string, string>;
+}
+
+/**
+ * Typography renderer options
+ */
+export interface ITypographyRendererOptions {
+  context: IRendererContext;
+  parseInlineContent: ParseInlineContentFn;
+  onButtonPress?: (title: string, cdata?: object) => void;
+  onLinkPress?: (href: string, cdata?: object) => void;
+  placeholders?: Record<string, string>;
+}
+
+/**
+ * Heading renderer options
+ */
+export interface IHeadingRendererOptions {
+  context: IRendererContext;
+  parseInlineContent: ParseInlineContentFn;
+  onButtonPress?: (title: string, cdata?: object) => void;
+  onLinkPress?: (href: string, cdata?: object) => void;
+  placeholders?: Record<string, string>;
+}
+
+/**
+ * Button renderer options
+ */
+export interface IButtonRendererOptions {
+  context: IRendererContext;
+  onButtonPress?: (title: string, cdata?: object) => void;
+  cdata?: object;
+}

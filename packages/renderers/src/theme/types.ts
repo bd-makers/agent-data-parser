@@ -386,7 +386,7 @@ export interface ITypographyStyleDef {
   fontWeight: string;
   letterSpacing: number;
   fontFamily?: string;
-  textDecorationLine?: string;
+  textDecorationLine?: 'none' | 'underline' | 'line-through' | 'underline line-through';
   color?: string;
 }
 

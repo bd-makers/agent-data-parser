@@ -1,28 +1,26 @@
-/**
- * Context Types - Public API
- */
-
 export type {
-  // Component Provider
   IComponentProvider,
-  // Parser Styles
   IParserStyles,
-  // Message Type
   MessageType,
-  // Renderer Context
   IRendererContext,
   IRendererContextConfig,
-  // Parser Function Types
   ParseInlineContentFn,
   IImagePattern,
   ParseImagePatternFn,
   IBlockRendererOptions,
   ParseFunction,
-  // Message Parser
   IMessageParser,
   ParserType,
-  // Tag Types
   TypographyTagName,
   HeadingTagName,
   ButtonTagName,
+  BlockRendererFn,
+  IParseInlineTagsOptions,
+  IParseInlineTagsResult,
+  ParseInlineTagsFn,
+  RenderInlineMarkdownFn,
+  IDivRendererOptions,
+  ITypographyRendererOptions,
+  IHeadingRendererOptions,
+  IButtonRendererOptions,
 } from './types';

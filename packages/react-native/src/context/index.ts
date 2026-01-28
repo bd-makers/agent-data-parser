@@ -1,5 +1,2 @@
-/**
- * Context - Public API
- */
-
-export { createReactNativeContext, createDefaultReactNativeContext } from './createContext';
+export { createReactNativeContext } from './createContext';
+export type { IReactNativeContextConfig } from './createContext';
