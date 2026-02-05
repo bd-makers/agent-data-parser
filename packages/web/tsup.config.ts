@@ -9,6 +9,7 @@ export default defineConfig({
   external: [
     'react',
     'react-dom',
+    'react/jsx-runtime',
     '@bdmakers/agent-data-parser',
     '@bdmakers/agent-data-parser-renderers',
   ],

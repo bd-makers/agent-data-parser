@@ -1,6 +1,6 @@
 {
   "name": "@bdmakers/agent-data-parser-web",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Agent Data Parser - Web (React DOM) implementation",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
