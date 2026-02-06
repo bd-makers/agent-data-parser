@@ -57,6 +57,44 @@ const processHrTag = (
   return pos.index + (pos.hrLength || 4);
 };
 
+/**
+ * 섹션 전체에서 링크-CDATA 매핑을 생성합니다
+ */
+const createLinkCdataMapForSection = (sectionText: string): Map<string, object | null> => {
+  const linkCdataMap = new Map<string, object | null>();
+  const cdataMatches = findCdataTags(sectionText);
+
+  if (cdataMatches.length === 0) {
+    return linkCdataMap;
+  }
+
+  const linkRegex = /<a\s+([^>]*)>(.*?)<\/a>/gi;
+  let linkMatch;
+
+  while ((linkMatch = linkRegex.exec(sectionText)) !== null) {
+    const attrs = parseAttributes(linkMatch[1]);
+    const href = attrs.href || '';
+    const linkIndex = linkMatch.index;
+
+    if (href) {
+      const prevCdata = cdataMatches
+        .filter(
+          (cdataMatch) =>
+            cdataMatch.index < linkIndex &&
+            cdataMatch.index + cdataMatch.fullMatch.length <= linkIndex,
+        )
+        .sort((a, b) => b.index - a.index)[0];
+
+      if (prevCdata) {
+        const parsedCdata = parseCdataContent(prevCdata.content);
+        linkCdataMap.set(href, parsedCdata);
+      }
+    }
+  }
+
+  return linkCdataMap;
+};
+
 const processSection = (
   sectionText: string,
   sectionKeyRef: { current: number },
@@ -66,13 +104,24 @@ const processSection = (
   const sectionElements: ReactNode[] = [];
 
   const cdataMatches = findCdataTags(sectionText);
-  const textWithoutCdata = sectionText
-    .replace(/<CDATA\s+[^>]*?\/>/gis, '')
-    .replace(/<CDATA>.*?<\/CDATA>/gis, '');
+  const sectionLinkCdataMap = createLinkCdataMapForSection(sectionText);
+  const textWithoutCdata = sectionText;
 
   const hrMatches = findHrTags(textWithoutCdata);
   const blockMatches = findBlockTags(textWithoutCdata);
   const allPositions = collectAndSortPositions(hrMatches, blockMatches);
+
+  const wrappedOnLinkPress = onLinkPress
+    ? (href: string, _cdata?: object) => {
+        const sectionCdata = sectionLinkCdataMap.get(href);
+        onLinkPress(href, sectionCdata ?? _cdata);
+      }
+    : undefined;
+
+  const wrappedOptions = {
+    ...options,
+    onLinkPress: wrappedOnLinkPress,
+  };
 
   let lastIndex = 0;
 
@@ -84,7 +133,7 @@ const processSection = (
         textWithoutCdata,
         sectionElements,
         sectionKeyRef,
-        options,
+        wrappedOptions,
       );
       return;
     }
@@ -135,7 +184,7 @@ const processSection = (
           parseInlineContent,
           parseImagePattern,
           onButtonPress,
-          onLinkPress,
+          onLinkPress: wrappedOnLinkPress,
           placeholders,
         },
         attributes,
@@ -155,7 +204,12 @@ const processSection = (
     const remainingText = textWithoutCdata.slice(lastIndex);
     const trimmed = remainingText.trim();
     if (trimmed) {
-      const inlineContent = parseInlineContent(trimmed, onButtonPress, placeholders, onLinkPress);
+      const inlineContent = parseInlineContent(
+        trimmed,
+        onButtonPress,
+        placeholders,
+        wrappedOnLinkPress,
+      );
       if (Array.isArray(inlineContent)) {
         sectionElements.push(...inlineContent);
       } else {
@@ -211,13 +265,28 @@ export const parseHtml = (html: string, options: ParseHtmlOptions): ReactNode[] 
 
   parts.push(html.slice(lastIndex));
 
+  let pendingCdata = '';
+
   for (let i = 0; i < parts.length; i++) {
-    const part = parts[i];
+    let part = parts[i];
+
+    const cdataStripped = part
+      .replace(/<CDATA\s+[^>]*?\/>/gis, '')
+      .replace(/<CDATA>.*?<\/CDATA>/gis, '');
+
+    if (!cdataStripped.trim() && part.match(/<CDATA/i)) {
+      pendingCdata += part;
+      part = '';
+    } else if (pendingCdata) {
+      part = pendingCdata + part;
+      pendingCdata = '';
+    }
+
     const trimmed = part.trim();
 
     if (trimmed) {
       const sectionKeyRef = { current: 0 };
-      const sectionElements = processSection(trimmed, sectionKeyRef, options);
+      const sectionElements = processSection(part, sectionKeyRef, options);
 
       const isLastPart = i === parts.length - 1;
       const nextPartIsEmpty = i < parts.length - 1 && !parts[i + 1].trim();

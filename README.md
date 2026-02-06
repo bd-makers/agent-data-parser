@@ -40,6 +40,81 @@ React Native + Web 지원하는 메시지 파서 라이브러리
 npm install @bdmakers/agent-data-parser-react-native
 ```
 
+### 상위 React Native 앱에서 로컬 링크로 사용하기
+
+모노레포의 `packages/react-native`를 npm 배포 없이 링크해서 사용하려면 아래 순서를 따르세요.
+
+#### 1. 모노레포 빌드
+
+`bodoc-agent-parser-web` 루트에서 한 번 빌드합니다. (core, renderers는 `dist`가 필요합니다.)
+
+```bash
+cd /path/to/bodoc-agent-parser-web
+npm install
+npm run build
+```
+
+#### 2. React Native 앱에 로컬 경로로 의존성 추가
+
+앱의 `package.json`에 세 패키지를 모두 **로컬 경로**로 넣습니다. (react-native 패키지가 core, renderers를 쓰므로 세 개 모두 필요합니다.)
+
+```json
+{
+  "dependencies": {
+    "@bdmakers/agent-data-parser": "file:../bodoc-agent-parser-web/packages/core",
+    "@bdmakers/agent-data-parser-renderers": "file:../bodoc-agent-parser-web/packages/renderers",
+    "@bdmakers/agent-data-parser-react-native": "file:../bodoc-agent-parser-web/packages/react-native"
+  }
+}
+```
+
+경로는 실제 모노레포 위치에 맞게 수정하세요. 예: `file:../../bodoc-agent-parser-web/packages/react-native`
+
+이후 앱 디렉터리에서:
+
+```bash
+npm install
+```
+
+#### 3. Metro가 링크된 패키지를 보도록 설정
+
+React Native 앱의 `metro.config.js`에서 링크된 모노레포 루트를 `watchFolders`에 넣고, 필요하면 `nodeModulesPaths`로 앱 루트의 `node_modules`를 우선 해석하도록 합니다.
+
+```javascript
+const path = require('path');
+const projectRoot = __dirname;
+const monorepoRoot = path.resolve(projectRoot, '..', 'bodoc-agent-parser-web'); // 실제 경로로 수정
+
+module.exports = {
+  projectRoot,
+  watchFolders: [monorepoRoot],
+  resolver: {
+    nodeModulesPaths: [path.resolve(projectRoot, 'node_modules')],
+  },
+};
+```
+
+경로가 다르면 `monorepoRoot`만 실제 구조에 맞게 바꾸면 됩니다.
+
+#### 4. 사용
+
+이후에는 일반 설치와 동일하게 import해서 사용하면 됩니다.
+
+```typescript
+import {
+  createReactNativeContext,
+  detectContentType,
+  parseImagePattern,
+  buildImageUrl,
+} from '@bdmakers/agent-data-parser-react-native';
+```
+
+**참고**
+
+- 모노레포 쪽 코드를 수정한 뒤에는 **core** 또는 **renderers**를 건드렸다면 모노레포에서 `npm run build` (또는 `npm run build:core` / `npm run build:renderers`)를 다시 실행해야 합니다.
+- **react-native** 패키지만 수정했다면 Metro가 소스를 보므로 보통 재빌드 없이 저장만으로 반영됩니다.
+- `npm link` / `yarn link`보다 `file:` 의존성 + `watchFolders` 방식이 React Native(Metro)에서 더 안정적인 경우가 많습니다.
+
 ### Web 프로젝트
 
 ```bash

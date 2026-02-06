@@ -64,6 +64,11 @@ export const createParseInlineContent =
       });
     }
 
+    const textWithCdata = processingText;
+    processingText = processingText
+      .replace(/<CDATA\s+[^>]*?\/>/gis, '')
+      .replace(/<CDATA>.*?<\/CDATA>/gis, '');
+
     const parts: ReactNode[] = [];
     let key = 0;
 
@@ -82,7 +87,7 @@ export const createParseInlineContent =
             keyStart: key,
             onLinkPress,
             linkCdataMap,
-            originalText: processingText,
+            originalText: textWithCdata,
           });
           parts.push(...inlineParts);
           key = nextKey;
@@ -116,7 +121,7 @@ export const createParseInlineContent =
         keyStart: key,
         onLinkPress,
         linkCdataMap,
-        originalText: processingText,
+        originalText: textWithCdata,
       });
       parts.push(...inlineParts);
     }
